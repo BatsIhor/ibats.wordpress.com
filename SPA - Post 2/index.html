@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Even Emitter Demo</title>
+    <link rel="stylesheet" href="css/page.css">
+</head>
+
+<body>
+
+  <!-- Templates -->
+  <script type="text/template" id="headerTpl">
+		<header id="app-header">
+			<div>
+				<section class="logged-user-info no-user">
+					<span>
+						No info yet
+					</span>
+					<span class="logout">logout</span>
+				</section>
+			</div>
+		</header>
+	</script>
+
+	<script type="text/template" id="loginTpl">
+		<div id="popup">
+			<div class="popup-content">
+				<form class="login-form">
+					<h1>Please login</h1>
+					<fieldset>
+						<ul>
+							<li><input type="email" name="login" placeholder="e-mail address" required /></li>
+							<li><input type="password" name="password" placeholder="password" required /></li>
+							<li><button type="submit"><span>login</span></button></li>
+							<li><p class="register"><a href="#">register</a></p></li>
+						</ul>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/template" id="registrationTpl">
+		<div id="popup">
+			<div class="popup-content">
+				<form class="login-form">
+					<h1>Use this form to register</h1>
+					<fieldset>
+						<ul>
+							<li><input type="email" name="login" placeholder="e-mail address" required /></li>
+							<li><input type="password" name="password" placeholder="password" required /></li>
+							<li><button type="submit"><span>register</span></button></li>
+						</ul>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/template"  id="contentTpl">
+		<div>
+			<section class="content">
+				<ul>
+					<li>
+						<p>And now you can do what you want</p>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</script>
+
+  <!-- End Templates-->
+
+  <script type="text/javascript">
+		window.App = {};
+  </script>
+
+  <script type="text/javascript" src="js/Helpers.js"></script>
+	<script type="text/javascript" src="js/EventEmitter.js"></script>
+	<script type="text/javascript" src="Application.js"></script>
+	<script type="text/javascript" src="js/view/BaseView.js"></script>
+	<script type="text/javascript" src="js/view/HeaderView.js"></script>
+	<script type="text/javascript" src="js/view/LoginView.js"></script>
+	<script type="text/javascript" src="js/view/RegistrationView.js"></script>
+	<script type="text/javascript" src="js/view/MainView.js"></script>
+
+</body>
+</html>

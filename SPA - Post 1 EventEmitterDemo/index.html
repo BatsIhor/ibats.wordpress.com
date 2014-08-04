@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Even Emitter Demo</title>
+</head>
+
+<body>
+    <div>
+        <h1>Simple Event Emitter on JavaScript</h1>
+        <button type="submit" ionclick="subscribe()">Subscribe</button>
+
+         <button type="submit" onclick="execute()">Execute</button>
+    </div>
+</body>
+<script type="text/javascript">
+
+var _events = {};
+
+var onEvent = function (eventName, fn, ctx){
+	if (typeof _events[eventName] === "undefined")
+	{
+		_events[eventName] = [];
+	}
+
+	_events[eventName].push(
+	{
+		fn : fn,
+		ctx : ctx || window
+	});
+};
+
+var emitEvent = function(eventName, data)
+{
+	if (typeof _events[eventName] !== undefined)
+	{
+		for(var i = 0; i < _events[eventName].length; i++) {
+				_events[eventName][i].fn.call(_events[eventName][i].ctx, i);
+		};
+	}
+};
+
+var subscribe = function(){
+	onEvent("send", function(data){
+		console.log("Subscribed " + data);
+	})
+}
+
+var execute = function(){
+	emitEvent("send");
+}
+
+</script>
+</html>
